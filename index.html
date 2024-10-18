@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Chào mừng các bạn</title>
+    <style>
+        #NoiDung {
+            border-style: double;
+            border-width: 3px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .TieuDe {
+            font-size: 30pt;
+            font-weight: bold;
+        }
+        .NoiDung {
+            font-size: 15pt;
+            font-weight: italic;
+        }
+    </style>
+    <script>
+        function MauXanh() {
+            document.getElementById("NoiDung").style.backgroundColor = "Green";
+        }
+        
+        function MauDo() {
+            document.getElementById("NoiDung").style.backgroundColor = "Red";
+        }
+
+        function MauVang() {
+            document.getElementById("NoiDung").style.backgroundColor = "Yellow";
+        }
+
+        function KhongMau() {
+            document.getElementById("NoiDung").style.backgroundColor = "transparent";
+        }
+
+        function DatCoChu() {
+            var fontSize = document.getElementById("fontSizeSelect").value;
+            document.getElementById("NoiDung").style.fontSize = fontSize;
+        }
+
+        function DatChieuCao() {
+            var heightSize = document.getElementById("heightSelect").value;
+            document.getElementById("NoiDung").style.height = heightSize;
+        }
+
+        function TangChieuCao() {
+            var currentHeight = parseInt(document.getElementById("NoiDung").style.height);
+            document.getElementById("NoiDung").style.height = (currentHeight + 50) + "px";
+        }
+
+        function NapTieuDe() {
+            var noiDung = document.getElementById("NoiDung");
+            noiDung.classList.remove("NoiDung"); // Loại bỏ class "NoiDung" nếu có
+            noiDung.classList.add("TieuDe");     // Thêm class "TieuDe"
+        }
+
+        function NapNoiDung() {
+            var noiDung = document.getElementById("NoiDung");
+            noiDung.classList.remove("TieuDe");  // Loại bỏ class "TieuDe" nếu có
+            noiDung.classList.add("NoiDung");    // Thêm class "NoiDung"
+        }
+    </script>
+</head>
+
+<body>
+    <p>JAVASCRIPT và CSS</p>
+    <p>
+        <input type="button" value="Xanh" onclick="MauXanh()">
+        <input type="button" value="Đỏ" onclick="MauDo()">
+        <input type="button" value="Vàng" onclick="MauVang()">
+        <input type="button" value="Không màu" onclick="KhongMau()">
+    </p>
+
+    <p>
+        <select id="fontSizeSelect">
+            <option value="20px">20px</option>
+            <option value="40px">40px</option>
+            <option value="90px">90px</option>
+        </select>
+        <input type="button" value="Đặt cỡ chữ" onclick="DatCoChu()">
+    </p>
+
+    <p>
+        <select id="heightSelect">
+            <option value="100px">100px</option>
+            <option value="200px">200px</option>
+            <option value="400px">400px</option>
+        </select>
+        <input type="button" value="Đặt chiều cao" onclick="DatChieuCao()">
+        <input type="button" value="Tăng chiều cao" onclick="TangChieuCao()">
+    </p>
+
+    <!-- Nút để nạp CSS tiêu đề -->
+    <input type="button" value="Nạp css tiêu đề" onclick="NapTieuDe()">
+    <p></p>
+
+    <!-- Nút để nạp CSS nội dung -->
+    <input type="button" value="Nạp css nội dung" onclick="NapNoiDung()">
+    <p></p>
+
+    <div id="NoiDung">
+        #NoiDung: Xin chào các bạn!
+    </div>
+</body>
+</html>
